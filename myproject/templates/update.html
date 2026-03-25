@@ -1,0 +1,32 @@
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    <div class="mb-3">
+        <label class="form-label">First Name:</label>
+        {{ form.fname }}
+        <small class="text-danger">{{ form.fname.errors }}</small>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Last Name:</label>
+        {{ form.lname }}
+        {{ form.lname.errors }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email:</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Contact:</label>
+        {{ form.contact }}
+        {{ form.contact.errors }}
+    </div>
+
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+</form>
